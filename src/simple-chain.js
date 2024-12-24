@@ -12,7 +12,7 @@ const chainMaker = {
     return this.linksArray.length;
   },
   addLink(value) {
-    if (value === undefined) this.linksArray.push("( )");
+    if (!value) this.linksArray.push("( )");
     this.linksArray.push(`( ${value} )`);
     len = this.linksArray.length;
     return this;
