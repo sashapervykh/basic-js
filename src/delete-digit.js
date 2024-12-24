@@ -12,17 +12,22 @@ const { NotImplementedError } = require("../extensions/index.js");
  *
  */
 function deleteDigit(n) {
-  const numStr = n.toString(); // Convert the number to a string
-  let maxNumber = 0;
-
-  for (let i = 0; i < numStr.length; i++) {
-    // Create a new number by skipping the digit at index i
-    const newNumber = parseInt(numStr.slice(0, i) + numStr.slice(i + 1), 10);
-    // Update maxNumber if the newNumber is larger
-    maxNumber = Math.max(maxNumber, newNumber);
+  let str = number.toString();
+  let newNumbers = [];
+  for (let i = 0; i < str.length; i++) {
+    let newStrNumber = str.substring(0, i) + str.substring(i + 1, str.length);
+    newNumbers[i] = Number(newStrNumber);
   }
 
-  return maxNumber;
+  let max = 0;
+
+  for (let i = 0; i < newNumbers.length; i++) {
+    if (newNumbers[i] > max) {
+      max = newNumbers[i];
+    }
+  }
+
+  return max;
 }
 
 module.exports = {
