@@ -36,9 +36,9 @@ const chainMaker = {
     return this;
   },
   finishChain() {
-    res = this.linksArray.toSpliced();
+    const res = this.linksArray.join("~~");
     this.linksArray = [];
-    return res.join("~~");
+    return res;
   },
 };
 
