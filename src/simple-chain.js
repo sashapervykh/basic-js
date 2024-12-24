@@ -6,13 +6,12 @@ const { NotImplementedError } = require("../extensions/index.js");
  */
 const chainMaker = {
   linksArray: [],
-  one: -1,
 
   getLength() {
     return this.linksArray.length;
   },
   addLink(value) {
-    if (!value) this.linksArray.push("( )");
+    if (!value) this.linksArray.push("(  )");
     this.linksArray.push(`( ${value} )`);
     len = this.linksArray.length;
     return this;
